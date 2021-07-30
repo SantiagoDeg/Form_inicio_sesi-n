@@ -1,0 +1,60 @@
+import tkinter
+from tkinter import *
+from tkinter import messagebox
+import pymysql
+
+pantalla=Tk()
+pantalla.geometry("300x380")
+pantalla.title("Bienvenidos")
+pantalla.iconbitmap("IUV.ico")
+
+image=PhotoImage(file=IUV.gif")
+image=image.subsample(2,2)
+label=Label(image=image)
+label.pack()
+
+Label(text="Acceso al Sistema", bg="navy", fg="white", width="300", height="3", font=("Calibri", 15)).pack()
+Label(text="").pack()
+
+Button(text="Iniciar Sesión", hbeight="3", width="30").pack()
+Label(text"").pack()
+
+Button(text="Registrar", height="3", width="30").pack()
+
+
+pantalla.mainloop()
+
+def inicio_sesion():
+    global pantallal
+    pantallal = Toplevel(pantalla)
+    pantallal.geometry("400x250")
+    pantallal.title("Inicio de Sesión")
+    pantallal.iconbitmap("IUV.ico")
+
+    Label(pantallal, text="Por favor ingrese su Usuario y Contraseña a continuación").pack()
+    Label(pantallal, text="").pack()
+
+    global nombreusuario_verify
+    global contrasenausuario_verify
+
+    nombreusuario_verify=StringVar()
+    contrasenausuario_verify=StringVar()
+
+    global nombre_usuario_entry
+    global contrasena_usuario_entry
+
+    Label(pantallal, text="Usuario").pack()
+    nombre_usuario_entry = Entry(pantallal, textvariable=nombreusuario_verify)
+    nombre_usuario_entry.pack()
+    Label(pantallal).pack()
+
+    Label(pantallal, text="Contraseña").pack()
+    contrasena_usuario_entry = Entry(pantallal, textvariable=nombreusuario_verify)
+    contrasena_usuario_entry.pack()
+    Label(pantallal).pack()
+
+    Button(pantallal, text="Iniciar Sesión").pack()
+
+menu_pantalla()
+    
+
